@@ -13,4 +13,5 @@ public class Internship
     public int PositionId { get; set; }
     public Intern Intern { get; set; }
     public int InternId { get; set; }
+    public List<InternshipApplication> Applications { get; set; }
 }

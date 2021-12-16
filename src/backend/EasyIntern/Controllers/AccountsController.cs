@@ -9,20 +9,26 @@ namespace EasyIntern.Controllers
     public class AccountsController : ControllerBase
     {
         [HttpGet("login")]
-        public Task<IActionResult> Login(InternLoginModel login)
+        public async Task<IActionResult> Login(InternLoginModel login)
         {
+            await Task.CompletedTask;
             if (!ModelState.IsValid)
             {
                 return BadRequest("user name and password required");
             }
+
+            return Ok();
         }
 
-       [HttpGet("organisationLogin")] public Task<IActionResult> OrganisationLogin(OrganisationLoginModel login)
+       [HttpGet("organisationLogin")] public async Task<IActionResult> OrganisationLogin(OrganisationLoginModel login)
         {
+            await Task.CompletedTask;
             if (!ModelState.IsValid)
             {
                 return BadRequest("user name and password required");
             }
+
+            return Ok();
         }
     }
 }
