@@ -9,3 +9,4 @@ public class Organisation
     public List<InternshipAdvertisement> InternshipAdvertisements { get; set; }
     public List<Internship> Internships { get; set; }
 }
+

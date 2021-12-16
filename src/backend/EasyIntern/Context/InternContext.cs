@@ -33,14 +33,18 @@ public class InternContext:DbContext
         {
             entity.HasMany(x => x.Applications);
         });
+        modelBuilder.Entity<OrganisationUsers>(entity =>
+        {
+            entity.Property(x=>x.PasswordHash).HasMaxLength(1000);
+        }); modelBuilder.Entity<Intern>(entity =>
+        {
+            entity.Property(x=>x.PasswordHash).HasMaxLength(1000);
+        });
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
+   
 
-        base.OnConfiguring(optionsBuilder);
-    }
-
+    public DbSet<OrganisationUsers> OrganisationUsers { get; set; }
     public DbSet<Intern> Interns { get; set; }
     public DbSet<Internship> Internships { get; set; }
     public DbSet<InternshipAdvertisement> InternshipAdvertisements { get; set; }
