@@ -4,7 +4,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: ./publish
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 6.0.x
-  WORKING_DIRECTORY: ..\src\backend\easyintern
+  WORKING_DIRECTORY: ../src/backend/easyintern
 jobs:
   build:
     runs-on: ubuntu-latest
