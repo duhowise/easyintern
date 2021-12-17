@@ -23,17 +23,17 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ./easyintern/src/backend/EasyIntern --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/easyintern/src/backend/EasyIntern
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/easyintern/src/backend/EasyIntern
+          path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
     runs-on: ubuntu-latest
